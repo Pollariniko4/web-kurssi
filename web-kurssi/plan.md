@@ -1,10 +1,17 @@
-1. Sivuston tavoite?
-Sivuston tavoite on olla mahdollisimman yksinkertainen ja helppo, jotta ihmiset voivat katsoa nopeasti missä lavalla kukakin esiinty ja millä kellonajalla.
+Suunnitelma: E1
 
-2. Ketkä ovat sen kävijöitä
-Kävijöitä kaikki, jotka tykkäävät musiikista tai tapahtumasta, jossa voi mahdollisesti hengailla vanhojen tuttujen kanssa.
+Tavoittee:
+[Kirjoita tähän lyhyesti, mikä sivuston tavoite on ja mitä ongelmaa se ratkaisee asiakkaalle.]
+Tavoite on luoda sivu, jota olisi helppo käyttää ja että se antaisi paljon tietoja vähille painaluksilla.
 
-3. Etsi kolme olemassa olevaa oikeaa sivustoa inspiraatioksi
-https://naantalinmusiikkijuhlat.fi/
-https://www.provinssi.fi/
-https://nummirock.fi/ohjelma
+Kävijöinä voisi olla 
+- Nuoret aikuiset
+- paikalliset yrittäjät
+
+3 oikeaa sivustoa
+1. provinssi.fi on hyvä sivu ja tarpeeksi helppo katsottava
+
+2. https://naantalinmusiikkijuhlat.fi/ Tykkäsin tämän sivusto fontista ja tyylistä
+
+3.https://nummirock.fi/ visuaalisesti tosi hieno ja selkeät paikat mistä löytää mitäkin.
+
