@@ -9,7 +9,7 @@ Kävijöinä voisi olla
 - paikalliset yrittäjät
 
 3 oikeaa sivustoa
-1. provinssi.fi on hyvä sivu ja tarpeeksi helppo katsottava
+1. https://www.provinssi.fi/ on hyvä sivu ja tarpeeksi helppo katsottava
 
 2. https://naantalinmusiikkijuhlat.fi/ Tykkäsin tämän sivusto fontista ja tyylistä
 
