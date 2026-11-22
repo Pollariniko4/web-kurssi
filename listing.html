@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esiintyjät & Aikataulu - Pohjanpiha Festival</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esiintyjät &amp; Aikataulu - Pohjanpiha Festival</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Etusivu</a> |
-            <a href="about.html">Alue & Esteettömyys</a> |
-            <a href="listing.html">Esiintyjät & Aikataulu</a> |
-            <a href="contact.html">Liput & Yhteystiedot</a>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <a href="index.html">Etusivu</a> |
+      <a href="about.html">Alue &amp; Esteettömyys</a> |
+      <a href="listing.html">Esiintyjät &amp; Aikataulu</a> |
+      <a href="contact.html">Liput &amp; Yhteystiedot</a>
+    </nav>
+  </header>
 
-    <main>
-        <h1>Esiintyjät & Aikataulu</h1>
-        <p>Festivaalilla esiintyy noin 30 artistia kolmella eri lavalla. Tarkista alta, kuka esiintyy, millä lavalla ja milloin, ja suunnittele päiväsi.</p>
-        <ul>
-            <li><strong>Päälava:</strong> Ohjelma julkaistaan pian</li>
-            <li><strong>Rantalava:</strong> Ohjelma julkaistaan pian</li>
-            <li><strong>Pihapiirilava:</strong> Ohjelma julkaistaan pian</li>
-        </ul>
-    </main>
+  <main>
+    <h1>Esiintyjät &amp; Aikataulu</h1>
+    <p>Festivaalilla esiintyy 30 artistia kolmella eri lavalla. Tarkista alta, kuka esiintyy, millä lavalla ja milloin, ja suunnittele oma festivaalipäiväsi.</p>
 
-    <footer>
-        <p>&copy; 2026 Pohjanpiha Festival</p>
-    </footer>
+    <div class="suodattimet" role="search">
+      <div>
+        <label for="haku">Hae artistia:</label>
+        <input type="search" id="haku" placeholder="Kirjoita nimi tai genre...">
+      </div>
+
+      <div>
+        <label for="lava-suodatin">Lava:</label>
+        <select id="lava-suodatin">
+          <option value="kaikki">Kaikki lavat</option>
+          <option value="Päälava">Päälava</option>
+          <option value="Rantalava">Rantalava</option>
+          <option value="Navettalava">Navettalava</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="paiva-suodatin">Päivä:</label>
+        <select id="paiva-suodatin">
+          <option value="kaikki">Molemmat päivät</option>
+          <option value="Perjantai">Perjantai</option>
+          <option value="Lauantai">Lauantai</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="jarjestys">Järjestä:</label>
+        <select id="jarjestys">
+          <option value="aika">Aikajärjestys</option>
+          <option value="nimi">Nimi (A–Ö)</option>
+        </select>
+      </div>
+    </div>
+
+    <p id="tilarivi" aria-live="polite"></p>
+    <ul id="esiintyjalista" class="korttilista"></ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Pohjanpiha Festival</p>
+  </footer>
 </body>
 </html>
-

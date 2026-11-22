@@ -125,3 +125,68 @@ footer {
   }
 }
 
+
+
+
+
+.suodattimet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 2px solid #8a5a2b;
+  background-color: #f3ead8;
+}
+
+.suodattimet div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.suodattimet input,
+.suodattimet select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #2e2a24;
+  background-color: #fffdf9;
+  border: 2px solid #2e2a24;
+}
+
+.suodattimet input:focus,
+.suodattimet select:focus {
+  outline: 3px solid #8a5a2b;
+  outline-offset: 2px;
+}
+
+#tilarivi {
+  font-weight: bold;
+  color: #8a5a2b;
+  margin-bottom: 1rem;
+}
+
+.korttilista {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.esiintyja-kortti {
+  border: 2px solid #2e2a24;
+  padding: 1rem;
+  background-color: #fffdf9;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #8a5a2b;
+  color: #f3ead8;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
