@@ -12,3 +12,4 @@ Olen tarkistanut ja testannut kaikki tekoälyn ehdottamat korjaukset omalla kone
 
 ## E3 – Listaussivu
 -tekoälyä käytin siihen että sais kaikki esiintyjät ja lavojen nimet.
+-myöskin jotain koodin pätkiä ja ideoita hain tekoälyltä.
