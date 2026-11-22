@@ -190,3 +190,82 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Popover-valikko */
+.popover-alue {
+  margin: 1.5rem 0;
+}
+
+.popover-nappi,
+.laheta-nappi {
+  background-color: #8a5a2b;
+  color: #f3ead8;
+  border: 2px solid #2e2a24;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popover-nappi:focus,
+.laheta-nappi:focus {
+  outline: 3px solid #2e2a24;
+  outline-offset: 2px;
+}
+
+.popover-laatikko {
+  border: 3px solid #8a5a2b;
+  background-color: #f3ead8;
+  color: #2e2a24;
+  padding: 1.5rem;
+  max-width: 400px;
+}
+
+/* Yhteydenottolomake */
+.lomake-kentta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+  max-width: 500px;
+}
+
+.lomake-kentta input,
+.lomake-kentta select,
+.lomake-kentta textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #2e2a24;
+  background-color: #fffdf9;
+  color: #2e2a24;
+}
+
+.lomake-kentta input:focus,
+.lomake-kentta select:focus,
+.lomake-kentta textarea:focus {
+  outline: 3px solid #8a5a2b;
+  outline-offset: 2px;
+}
+
+.virheteksti {
+  color: #9e1b1b;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+#lomake-status {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2e2a24;
+}

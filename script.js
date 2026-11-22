@@ -104,3 +104,95 @@ if (esiintyjalista && hakuKentta && lavaSuodatin && paivaSuodatin && jarjestysVa
 
   paivitaOhjelma();
 }
+
+
+
+
+
+
+
+
+// === E3: Yhteydenottolomakkeen tarkistus ja localStorage ===
+const lomake = document.getElementById("yhteydenotto-lomake");
+
+if (lomake) {
+  const nimiKentta = document.getElementById("nimi");
+  const spostiKentta = document.getElementById("sahkoposti");
+  const aiheKentta = document.getElementById("aihe");
+  const viestiKentta = document.getElementById("viesti");
+  const statusAlue = document.getElementById("lomake-status");
+
+  const nimiVirhe = document.getElementById("nimi-virhe");
+  const spostiVirhe = document.getElementById("sahkoposti-virhe");
+  const viestiVirhe = document.getElementById("viesti-virhe");
+
+  // Ladataan aiemmin tallennetut tiedot selaimen muistista (localStorage), jos niitä on
+  const tallennettu = localStorage.getItem("pohjanpiha_yhteydenotto");
+  if (tallennettu) {
+    try {
+      const data = JSON.parse(tallennettu);
+      if (data.nimi) nimiKentta.value = data.nimi;
+      if (data.sahkoposti) spostiKentta.value = data.sahkoposti;
+      if (data.aihe) aiheKentta.value = data.aihe;
+    } catch (e) {
+      // Ohitetaan virheellinen tallenne
+    }
+  }
+
+  lomake.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Nollataan aiemmat virheet
+    nimiVirhe.textContent = "";
+    spostiVirhe.textContent = "";
+    viestiVirhe.textContent = "";
+    nimiKentta.removeAttribute("aria-invalid");
+    spostiKentta.removeAttribute("aria-invalid");
+    viestiKentta.removeAttribute("aria-invalid");
+    statusAlue.textContent = "";
+
+    let ensimmainenVirheKentta = null;
+
+    // 1. Nimen tarkistus
+    if (nimiKentta.value.trim().length < 2) {
+      nimiVirhe.textContent = "Kirjoita nimesi (vähintään 2 merkkiä).";
+      nimiKentta.setAttribute("aria-invalid", "true");
+      if (!ensimmainenVirheKentta) ensimmainenVirheKentta = nimiKentta;
+    }
+
+    // 2. Sähköpostin tarkistus
+    const spostiArvo = spostiKentta.value.trim();
+    if (!spostiArvo.includes("@") || !spostiArvo.includes(".")) {
+      spostiVirhe.textContent = "Anna kelvollinen sähköpostiosoite (esim. nimi@esimerkki.fi).";
+      spostiKentta.setAttribute("aria-invalid", "true");
+      if (!ensimmainenVirheKentta) ensimmainenVirheKentta = spostiKentta;
+    }
+
+    // 3. Viestin tarkistus
+    if (viestiKentta.value.trim().length < 10) {
+      viestiVirhe.textContent = "Kirjoita viestiin vähintään 10 merkkiä.";
+      viestiKentta.setAttribute("aria-invalid", "true");
+      if (!ensimmainenVirheKentta) ensimmainenVirheKentta = viestiKentta;
+    }
+
+    // Jos virheitä löytyi, siirretään fokus ensimmäiseen virheelliseen kenttään
+    if (ensimmainenVirheKentta) {
+      ensimmainenVirheKentta.focus();
+      return;
+    }
+
+    // Tallennetaan tiedot selaimeen (localStorage)
+    const lomakeData = {
+      nimi: nimiKentta.value.trim(),
+      sahkoposti: spostiArvo,
+      aihe: aiheKentta.value,
+      viesti: viestiKentta.value.trim(),
+      aika: new Date().toISOString()
+    };
+    localStorage.setItem("pohjanpiha_yhteydenotto", JSON.stringify(lomakeData));
+
+    // Ilmoitetaan onnistumisesta ruudunlukijalle ja käyttäjälle
+    statusAlue.textContent = "Pyyntö on valmis ja tietosi on tallennettu selaimeen. Palaamme asiaan pian.";
+    viestiKentta.value = "";
+  });
+}

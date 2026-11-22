@@ -1,35 +1,88 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liput & Yhteystiedot - Pohjanpiha Festival</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liput &amp; Yhteystiedot - Pohjanpiha Festival</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Etusivu</a> |
-            <a href="about.html">Alue & Esteettömyys</a> |
-            <a href="listing.html">Esiintyjät & Aikataulu</a> |
-            <a href="contact.html">Liput & Yhteystiedot</a>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <a href="index.html">Etusivu</a> |
+      <a href="about.html">Alue &amp; Esteettömyys</a> |
+      <a href="listing.html">Esiintyjät &amp; Aikataulu</a> |
+      <a href="contact.html">Liput &amp; Yhteystiedot</a>
+    </nav>
+  </header>
 
-    <main>
-        <h1>Liput & Yhteystiedot</h1>
-        
-        <h2>Lipunmyynti</h2>
-        <p>Festivaalin liput myy virallinen lippukumppanimme. Siirry lippukauppaan alla olevasta linkistä.</p>
-        <p><a href="https://lippu.fi" target="_blank">Osta liput lippukumppaniltamme &rarr;</a></p>
+  <main>
+    <h1>Liput &amp; Yhteystiedot</h1>
+    <p>Pohjanpiha Festival järjestetään Alavudella. Kysy lisää lipuista, esteettömyydestä tai järjestelyistä alla olevalla lomakkeella.</p>
 
-        <h2>Kysy alueesta tai esteettömyydestä</h2>
-        <p>Saamme paljon kysymyksiä alueesta ja erityisesti esteettömyydestä. Jäikö jokin askarruttamaan? Voit lähettää meille kysymyksesi lomakkeella (lomake avautuu pian).</p>
-    </main>
+    <!-- Popover-valikko -->
+    <div class="popover-alue">
+      <button type="button" popovertarget="lippuinfo-popover" class="popover-nappi">
+        Näytä lippuhinnat ja aukioloajat
+      </button>
 
-    <footer>
-        <p>&copy; 2026 Pohjanpiha Festival</p>
-    </footer>
+      <div id="lippuinfo-popover" popover class="popover-laatikko">
+        <h2>Lippuhinnat &amp; Portit</h2>
+        <ul>
+          <li><strong>Perjantai-lippu:</strong> 59 € (portit klo 13.30)</li>
+          <li><strong>Lauantai-lippu:</strong> 69 € (portit klo 13.00)</li>
+          <li><strong>Kahden päivän lippu:</strong> 109 €</li>
+        </ul>
+        <button type="button" popovertarget="lippuinfo-popover" popovertargetaction="hide">
+          Sulje ikkuna
+        </button>
+      </div>
+    </div>
+
+    <!-- Yhteydenottolomake -->
+    <section aria-labelledby="lomake-otsikko">
+      <h2 id="lomake-otsikko">Ota yhteyttä tai varaa ryhmäliput</h2>
+
+      <form id="yhteydenotto-lomake" novalidate>
+        <div class="lomake-kentta">
+          <label for="nimi">Nimi (pakollinen):</label>
+          <input type="text" id="nimi" name="nimi" required aria-describedby="nimi-virhe">
+          <span id="nimi-virhe" class="virheteksti"></span>
+        </div>
+
+        <div class="lomake-kentta">
+          <label for="sahkoposti">Sähköpostiosoite (pakollinen):</label>
+          <input type="email" id="sahkoposti" name="sahkoposti" required aria-describedby="sahkoposti-virhe">
+          <span id="sahkoposti-virhe" class="virheteksti"></span>
+        </div>
+
+        <div class="lomake-kentta">
+          <label for="aihe">Yhteydenoton aihe:</label>
+          <select id="aihe" name="aihe" aria-describedby="aihe-virhe">
+            <option value="liput">Lippukysymykset</option>
+            <option value="esteettomyys">Esteettömyys ja avustajat</option>
+            <option value="muu">Muu palaute tai kysymys</option>
+          </select>
+          <span id="aihe-virhe" class="virheteksti"></span>
+        </div>
+
+        <div class="lomake-kentta">
+          <label for="viesti">Viesti (pakollinen, vähintään 10 merkkiä):</label>
+          <textarea id="viesti" name="viesti" rows="5" required aria-describedby="viesti-virhe"></textarea>
+          <span id="viesti-virhe" class="virheteksti"></span>
+        </div>
+
+        <button type="submit" class="laheta-nappi">Lähetä viesti</button>
+      </form>
+
+      <!-- Ilmoitusalue ruudunlukijalle (role="status") -->
+      <div id="lomake-status" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Pohjanpiha Festival</p>
+  </footer>
 </body>
 </html>
-
